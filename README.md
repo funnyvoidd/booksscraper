@@ -31,3 +31,18 @@ A production-style Python web scraping tool for extracting book data from e-comm
 git clone https://github.com/funnyvoidd/booksscraper.git
 cd booksscraper
 pip install -r requirements.txt
+```
+
+## ▶️ Usage
+
+```bash
+python src/main.py --output data/books.csv
+```
+
+## 🧠 Architecture
+# This project is modular:
+
+- scraper.py -> crawling logic
+- parser.py -> HTML parsing
+- exporter.py -> data export
+- utils.py -> networking layer
