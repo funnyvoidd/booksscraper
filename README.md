@@ -1,75 +1,33 @@
-# Books Scraper
+# 📚 Books Scraper Tool
 
-Парсер для сбора данных о книгах с books.toscrape.com.
+A production-style Python web scraping tool for extracting book data from e-commerce websites.
 
-## Возможности
+---
 
-- Сбор всех книг каталога.
-- Фильтрация по категории.
-- Автоматический обход пагинации.
-- Извлечение:
-  - названия книги;
-  - цены;
-  - рейтинга;
-  - наличия на складе;
-  - ссылки на изображение.
-- Экспорт данных в CSV.
+## 🚀 Features
 
-## Используемые технологии
+- Pagination handling
+- Category filtering (planned/extendable)
+- Robust request handling with retries
+- Structured architecture (modular design)
+- CSV export
+- Easy extension to JSON / DB
 
-- Python 3
+---
+
+## 🛠 Tech Stack
+
+- Python 3.10+
 - requests
 - BeautifulSoup4
 - argparse
-- csv
+- CSV
 
-## Установка
+---
+
+## 📦 Installation
 
 ```bash
 git clone https://github.com/funnyvoidd/booksscraper.git
-cd books-scraper
+cd booksscraper
 pip install -r requirements.txt
-```
-
-## Запуск
-
-Собрать все книги:
-
-```bash
-python scraper.py
-```
-
-Собрать книги категории Science:
-
-```bash
-python scraper.py --category "Science"
-```
-
-Собрать книги категории Travel:
-
-```bash
-python scraper.py --category "Travel"
-```
-
-## Результат
-
-После завершения работы создаётся файл:
-
-```text
-books.csv
-```
-
-Пример структуры:
-
-| title | price | rating | availability | image_url |
-|---------|---------|---------|---------|---------|
-| A Light in the Attic | £51.77 | 3 | In stock | https://... |
-
-## Возможные улучшения
-
-- Экспорт в Excel (.xlsx)
-- Сохранение в SQLite/PostgreSQL
-- Многопоточность
-- Логирование
-- Асинхронный парсинг (aiohttp)
-
