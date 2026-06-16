@@ -1,15 +1,10 @@
 import argparse
-from core.engine import run
+from src.core.engine import run
+
 
 def main():
-    parser = argparse.ArgumentParser(description="Scraping system CLI")
-
-    parser.add_argument(
-        "--config",
-        default="src/config/config.yaml",
-        help="Path to config file"
-    )
-
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", default="src/config/config.yaml")
     args = parser.parse_args()
 
     run(args.config)

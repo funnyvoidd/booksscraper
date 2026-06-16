@@ -1,6 +1,6 @@
 import csv
 
-def export_csv(data, path):
+def export(data, path):
     if not data:
         return
 

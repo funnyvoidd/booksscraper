@@ -3,6 +3,7 @@ import time
 
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 
+
 def fetch(url, retries=3, delay=1):
     for i in range(retries):
         try:
@@ -12,4 +13,5 @@ def fetch(url, retries=3, delay=1):
             return r.text
         except Exception:
             time.sleep(delay * (2 ** i))
+
     return None

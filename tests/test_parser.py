@@ -1,4 +1,4 @@
-from src.parsers.parser import get_rating
+from src.parsers.books import get_rating
 
 def test_rating():
     tag = type("obj", (), {"get": lambda self, x: ["star-rating", "Three"]})

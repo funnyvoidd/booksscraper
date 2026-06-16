@@ -1,7 +1,6 @@
 base_url: "https://books.toscrape.com/catalogue/page-1.html"
 
 parser: "books"
-
 exporter: "csv"
 
 output: "data/output.csv"
