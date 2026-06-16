@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from utils import safe_request
-from parser import parse_books
+from src.parsers.parser import parse_books
 
 def scrape(start_url):
     url = start_url

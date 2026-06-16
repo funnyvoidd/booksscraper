@@ -1,21 +1,18 @@
 import argparse
-from scraper import scrape
-from exporter import export_csv
-
-BASE_URL = "https://books.toscrape.com/catalogue/page-1.html"
+from core.engine import run
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--category", type=str)
-    parser.add_argument("--output", type=str, default="data/books.csv")
+    parser = argparse.ArgumentParser(description="Scraping system CLI")
+
+    parser.add_argument(
+        "--config",
+        default="src/config/config.yaml",
+        help="Path to config file"
+    )
 
     args = parser.parse_args()
 
-    data = scrape(BASE_URL)
-
-    export_csv(data, args.output)
-
-    print(f"Done. Saved to {args.output}")
+    run(args.config)
 
 
 if __name__ == "__main__":
