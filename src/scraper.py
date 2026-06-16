@@ -1,3 +1,5 @@
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 from utils import safe_request
 from parser import parse_books
 
@@ -15,9 +17,6 @@ def scrape(start_url):
 
         next_btn = BeautifulSoup(r.text, "html.parser").select_one("li.next a")
 
-        url = (
-            url.rsplit("/", 1)[0] + "/" + next_btn["href"]
-            if next_btn else None
-        )
+        url = urljoin(url, next_btn["href"]) if next_btn else None
 
     return all_books
