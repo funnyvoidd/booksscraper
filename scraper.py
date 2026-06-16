@@ -35,6 +35,8 @@ def safe_request(url):
 
         response.raise_for_status()
 
+        response.encoding = "utf-8"  # <-- ВАЖНО
+
         return response
 
     except requests.RequestException as e:
@@ -79,7 +81,7 @@ def get_rating(star_tag):
 
 
 def parse_page(url):
-    response = safe_request(BASE_URL)
+    response = safe_request(url)
 
     if not response:
         return [], None
@@ -147,11 +149,6 @@ def scrape(category=None):
             all_books.extend(books)
 
             pbar.update(len(books))
-        logger.info(f"Парсинг страницы {current_url}")
-
-        books, current_url = parse_page(current_url)
-
-        all_books.extend(books)
 
     save_to_csv(all_books)
 
@@ -159,12 +156,7 @@ def scrape(category=None):
 
 
 def save_to_csv(data):
-    with open(
-        "books.csv",
-        "w",
-        newline="",
-        encoding="utf-8"
-    ) as file:
+    with open("books.csv", "w", newline="", encoding="utf-8-sig") as file:
 
         writer = csv.DictWriter(
             file,
