@@ -1,6 +1,8 @@
 import yaml
 from core.request import fetch
-from parsers.books_parser import parse
+from src.parsers.books_parser import parse
+from src.core.request import fetch
+from src.exporters.csv_exporter import export_csv
 from exporters.csv_exporter import export_csv
 from urllib.parse import urljoin
 
