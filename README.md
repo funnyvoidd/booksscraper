@@ -1,5 +1,4 @@
 # Books Scraper
-<<<<<<< HEAD
 
 Парсер для сбора данных о книгах с books.toscrape.com.
 
@@ -27,7 +26,7 @@
 ## Установка
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/funnyvoidd/booksscraper.git
 cd books-scraper
 pip install -r requirements.txt
 ```
@@ -86,5 +85,3 @@ books.csv
 2. Установите зависимости: 'pip install -r requirements.txt'
 3. Запустите парсер: 'python scraper.py -- category "Science"'
 
-## Пример вывода:
->>>>>>> 76da9c282835bc7902abf480b366600952bcc6a6
